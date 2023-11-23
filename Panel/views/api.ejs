@@ -1,0 +1,110 @@
+<% let sw=bot.guilds.cache.get("1142569073469820991") %>
+<%- include('./panel4.ejs', {bot, user}) %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Responsive Admin Dashboard Template">
+        <meta name="keywords" content="admin,dashboard">
+        <meta name="author" content="stacks">
+
+        <title>Thesellixsite ~ API</title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1070780485673951294/1070782317905330228/tststststststtts.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="./ek/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/pace/pace.css" rel="stylesheet">
+
+        <link href="./ek/assets/css/main.min.css" rel="stylesheet">
+        <link href="./ek/assets/css/custom.css" rel="stylesheet">
+
+    </head>
+    <body class="">
+              <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">Ücretsiz API Hizmeti</h5>
+                            <p class="card-description" style="color: white;">Aşağı da bulunan json formatları ile bir sunucu hakkında bilgi alma işlemleri yapabilirsiniz.</p>
+                            <table class="table table-striped">
+                              <thead>
+                            <tr>
+                              <th scope="col">Çıktılar</th>
+                              <th scope="col">Sonuç</th>
+                              <th scope="col">JSON</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>id</td>
+                              <td>Number</td>
+                              <td>Sunucu <span style="color: red;">idsini</span> çıkartır.</td>
+                            </tr>
+                            <tr>
+                              <td>name</td>
+                              <td>String</td>
+                              <td>Sunucu <span style="color: red;">ismini</span> çıkartır.</td>
+                            </tr>
+                            <tr>
+                              <td>icon</td>
+                              <td>String</td>
+                              <td>Sunucunun icon resmi <span style="color: red;">varsa</span> çıkartır.</td>
+                            </tr>
+                            <tr>
+                              <td>banner</td>
+                              <td>String</td>
+                              <td>Sunucunun arkaplan resmi <span style="color: red;">varsa</span> çıkartır.</td>
+                          </tr>
+                          <tr>
+                              <td>url</td>
+                              <td>String || Boolean</td>
+                              <td>Sunucunun bağlantısı <span style="color: red;">varsa</span> çıkartır yoksa <span style="color: red;">undefined</span> değeri verir.</td>
+                          </tr>
+                          <tr>
+                              <td>members</td>
+                              <td>Number</td>
+                              <td>Sunucuda bulunan <span style="color: red;">kullanıcıların</span> sayısını belirtir.</td>
+                          </tr>
+                          <tr>
+                              <td>roles</td>
+                              <td>Number</td>
+                              <td>Sunucuda bulunan tüm <span style="color: red;">rollerin</span> sayısını belirtir.</td>
+                          </tr>
+                          <tr>
+                              <td>channels</td>
+                              <td>Number</td>
+                              <td>Sunucuda bulunan tüm <span style="color: red;">kanalların</span> sayısını belirtir.</td>
+                          </tr>
+                          <tr>
+                            <td>channels</td>
+                            <td>Number</td>
+                            <td>Sunucuda bulunan tüm <span style="color: red;">kanalların</span> sayısını belirtir.</td>
+                         </tr>
+                         <tr>
+                            <td>deafs</td>
+                            <td>Number</td>
+                            <td>Sunucuda <span style="color: red;">seste kulaklığını kapatmış</span> kullanıcıları belirtir.</td>
+                         </tr>
+                          </tbody>
+                        
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <script src="./ek/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="./ek/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="./ek/assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="./ek/assets/plugins/pace/pace.min.js"></script>
+        <script src="./ek/assets/js/main.min.js"></script>
+    </body>
+</html>

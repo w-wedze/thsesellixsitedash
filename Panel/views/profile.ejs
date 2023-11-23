@@ -1,0 +1,467 @@
+<% let sw=bot.guilds.cache.get("1142569073469820991") %>
+<%- include('./panel4.ejs', {bot, user}) %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Responsive Admin Dashboard Template">
+        <meta name="keywords" content="admin,dashboard">
+        <meta name="author" content="stacks">
+        
+        <title>Thesellixsite ~ <%= user.username %></title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1070780485673951294/1070782317905330228/tststststststtts.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="./ek/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/pace/pace.css" rel="stylesheet">
+
+        <link href="../ek/assets/css/main.min.css" rel="stylesheet">
+        <link href="./ek/assets/css/custom.css" rel="stylesheet">
+
+    </head>
+    <body class="">
+      
+
+        <div class="page-container">
+          <div class="page-sidebar">
+            <a class="logo" href="index">thesellix.site</a>
+            <ul class="list-unstyled accordion-menu">
+              <li class="active-page">
+                <a href="#" class="active"><i data-feather="activity"></i>Panel<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="index" class="active"><i class="far fa-circle"></i>Ana Sayfa</a></li>
+                  <li><a href="guild" class="active"><i class="far fa-circle"></i>Sunucu Yönetimi</a></li>
+                  <li><a href="userlist" class="active"><i class="far fa-circle"></i>Üye Yönetimi</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="aperture"></i>Rol Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="roles-manage"><i class="far fa-circle"></i>Register Rolleri</a></li>
+                  <li><a href="moderation-manage"><i class="far fa-circle"></i>Yetkili Rolleri</a></li>
+                  <li><a href="moderation-manage2"><i class="far fa-circle"></i>Ceza Rolleri</a></li>
+                  <li><a href="moderation-manage3"><i class="far fa-circle"></i>Karışık Roller</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="inbox"></i>Kanal Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="channel-manage"><i class="far fa-circle"></i>Kanal Yönetimi</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="code"></i>Ceza Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="underworld"><i class="far fa-circle"></i>Jail Cezaları</a></li>
+                  <li><a href="mutedlist"><i class="far fa-circle"></i>Mute Cezaları</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="star"></i>Stat & Welcome<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="stat"><i class="far fa-circle"></i>Stat Kategorileri</a></li>
+                  <li><a href="welcome"><i class="far fa-circle"></i>Welcome Ayarı</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="grid"></i>API<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="checkout"><i class="far fa-circle"></i>Ödeme Planları</a></li>
+                  <li><a href="api"><i class="far fa-circle"></i>Api Kullanımı</a></li>
+                </ul>
+              </li>
+            </ul>
+            <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+        </div>
+            <div class="page-content">
+
+              <div class="page-header">
+                <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                  <div class="header-title flex-fill">
+                    <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                    <h5>thesellix.site</h5>
+                  </div>
+                    <div class="header-search">
+                      <form>
+                        <input class="form-control" type="text" placeholder="<%= sw.name %>" aria-label="Search" disabled>
+                        <a href="#" class="close-search"><i data-feather="x"></i></a>
+                      </form>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item d-md-block d-lg-none">
+                          <a class="nav-link" href="#" id="toggle-search"><i data-feather="search"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link activity-trigger" href="#" id="activity-sidebar-toggle"><i data-feather="grid"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link notifications-dropdown" href="#" id="notificationsDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">3<div class="spinner-grow text-danger" role="status"></div></a>
+                          <div class="dropdown-menu dropdown-menu-end notif-drop-menu" aria-labelledby="notificationsDropDown">
+                            <h6 class="dropdown-header">Notifications</h6>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-info text-white">
+                                    <i class="fas fa-bullhorn"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p class="bold-notif-text">faucibus dolor in commodo lectus mattis</p>
+                                  <small>19:00</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-primary text-white">
+                                    <i class="fas fa-bolt"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p class="bold-notif-text">faucibus dolor in commodo lectus mattis</p>
+                                  <small>18:00</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-success text-white">
+                                    <i class="fas fa-at"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge">
+                                    <img src="<%= sw.iconURL({dynamic: true}) %>" alt="">
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge">
+                                    <img src="<%= sw.iconURL({dynamic: true}) %>" alt="">
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="<%= 'https://cdn.discordapp.com/avatars/' + user.id + '/' + user.avatar +'.png' %>" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                            <a class="dropdown-item" href="profile"><i data-feather="user"></i>Profil</a>
+                            <a class="dropdown-item" href="/"><i data-feather="log-out"></i>Çıkış Yap</a>
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+                </nav>
+            </div>
+                <div class="main-wrapper">
+                  <div class="row">
+                    <div class="col-xl-12">
+                        <div class="profile-cover">
+                          <img src="<%= sw.bannerURL({dynamic: true}) %>" alt="">
+                        </div>
+                        <div class="profile-header">
+                            <div class="profile-img">
+                                <img src="<%= sw.iconURL({dynamic: true}) %>" alt="">
+                            </div>
+                            <div class="profile-name">
+                                <h3><%= sw.name %></h3>
+                            </div>
+                            <div class="profile-header-menu">
+                                <ul class="list-unstyled">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-lg-3">
+                    <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Sunucu Bilgi</h5>
+                          <ul class="list-unstyled profile-about-list">
+                              <li><i class="far fa-edit m-r-xxs"></i><span>Toplam Kullanıcı <a href="#"><%= sw.members.cache.size || 0 %></a></span></li>
+                              <li><i class="far fa-building m-r-xxs"></i><span>Toplam Aktif <a href="#"><%= sw.members.cache.filter(m => m.presence && m.presence.status !== "offline").size || 0 %></a></span></li>
+                              <li><i class="far fa-compass m-r-xxs"></i><span>Toplam Boost <a href="#"><%= sw.premiumSubscriptionCount || 0 %></a></span></li>
+                              <li><i class="far fa-user m-r-xxs"></i><span>Toplam Ses <a href="#"><%= sw.members.cache.filter(k => k.voice.channel).size || 0 %></a></span></li>
+                              <li class="profile-about-list-buttons">
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mevcut Plan:</h5>
+                        <ul class="list-unstyled profile-about-list">
+                            <li><i class="fa fa-shopping-cart"></i><span><a href="./checkout">&nbsp;Controller</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6">
+                    <div class="card card-bg">
+                      <div class="card-body">
+                          <div class="post">
+                              <div class="post-header">
+                                  <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                                  <div class="post-info">
+                                      <span class="post-author">John Doe</span><br>
+                                      <span class="post-date">3hrs</span>
+                                  </div>
+                                  <div class="post-header-actions">
+                                      <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                                  </div>
+                              </div>
+                              <div class="post-body">
+                                  <p>Proin eu fringilla dui. Pellentesque mattis lobortis mauris eu tincidunt. Maecenas hendrerit faucibus dolor, in commodo lectus mattis ac.</p>
+                                  <img src="./ek/assets/images/card-image.png" class="post-image" alt="">
+                              </div>
+                              <div class="post-actions">
+                                  <ul class="list-unstyled">
+                                      <li>
+                                          <a href="#" class="like-btn"><i class="far fa-heart"></i>Like</a>
+                                      </li>
+                                      <li>
+                                          <a href="#"><i class="far fa-comment"></i>Comment</a>
+                                      </li>
+                                      <li>
+                                          <a href="#"><i class="far fa-paper-plane"></i>Share</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="post-comments">
+                                  <div class="post-comm">
+                                      <img src="./ek/assets/images/avatars/profile-image.png" class="comment-img" alt="">
+                                      <div class="comment-container">
+                                          <span class="comment-author">
+                                              Sonny Rosas
+                                              <small class="comment-date">5min</small>
+                                          </span>
+                                      </div>
+                                      <span class="comment-text">
+                                          Mauris ultrices convallis massa, nec facilisis enim interdum ac.
+                                      </span>
+                                  </div>
+                                  <div class="post-comm">
+                                      <img src="./ek/assets/images/avatars/profile-image.png" class="comment-img" alt="">
+                                      <div class="comment-container">
+                                          <span class="comment-author">
+                                              Jacob Lee
+                                              <small class="comment-date">27min</small>
+                                          </span>
+                                      </div>
+                                      <span class="comment-text">
+                                          Cras tincidunt quam nisl, vitae aliquet enim pharetra at. Nunc varius bibendum turpis, vitae ultrices tortor facilisis ac.
+                                      </span>
+                                  </div>
+                                  <div class="new-comment">
+                                    <div class="input-group mb-3">
+                                      <input type="text" class="form-control" placeholder="Type something" aria-label="Type Something" aria-describedby="button-addon2">
+                                      <button class="btn btn-success" type="button" id="button-addon2">Comment</button>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-md-12 col-lg-3">
+                    <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Panel Yetkilileri</h5>
+                          <div class="story-list">
+                              <div class="story">
+                                  <a href="#"><img src="<%= sw.members.cache.get('1067476859933179954').user.avatarURL() %>" alt=""></a>
+                                  <div class="story-info">
+                                      <a href="#"><span class="story-author"><%= sw.members.cache.get('1067476859933179954').user.username %></span></a>
+                                      <span class="story-time"><%= sw.members.cache.get('1067476859933179954').user.id %></span>
+                                  </div>
+                              </div>
+                              <div class="story">
+                                <a href="#"><img src="<%= sw.members.cache.get('500325853108895744').user.avatarURL() %>" alt=""></a>
+                                <div class="story-info">
+                                    <a href="#"><span class="story-author"><%= sw.members.cache.get('500325853108895744').user.username %></span></a>
+                                    <span class="story-time"><%= sw.members.cache.get('500325853108895744').user.id %></span>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                      </div>
+                      <div class="page-footer">
+                        <a href="calendar.html" class="page-footer-item page-footer-item-left"><i data-feather="arrow-left" class="footer-left"></i>Calendar</a>
+                        <a href="file-manager.html" class="page-footer-item page-footer-item-right">File Manager<i data-feather="arrow-right" class="footer-right"></i></a>
+                      </div>
+                                  
+                </div>
+              
+            </div>
+
+            <div class="activity-sidebar-overlay"></div>
+        <div class="activity-sidebar">
+          <a href="#" id="activity-sidebar-close"><i class="material-icons">close</i></a>
+          <div class="activity-header">
+            <h5>Activity Logs</h5>
+          </div>
+          <div class="activity-body">
+            <ul class="activity-list list-unstyled">
+              <li class="activity-item">
+                  <div class="activity-icon"><i class="material-icons">add</i></div>
+                  <div class="activity-text">Ann Green uploaded new item
+                      <span>This item has to be reviewed, moderators will check it soon.</span>
+                  </div>
+                  <div class="activity-helper">45min ago</div>
+              </li>
+              <li class="activity-item activity-info">
+                  <div class="activity-icon"><i class="material-icons">code</i></div>
+                  <div class="activity-text">John Doe made changes to create-invoice.js
+                      <span>57 lines of code added, 0 removals, 0 errors, 6 warnings</span>
+                  </div>
+                  <div class="activity-helper">3h ago</div>
+              </li>
+              <li class="activity-item activity-danger">
+                  <div class="activity-icon"><i class="material-icons">error_outline</i></div>
+                  <div class="activity-text">Can't retrieve data from server
+                      <span>Server is not responding, please contact provider</span>
+                  </div>
+                  <div class="activity-helper">6h ago</div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon"><i class="material-icons">done</i></div>
+                <div class="activity-text">Files Uploaded
+                    <span>2 new files uploaded</span>
+                    <div class="mail-attachment-files">
+                      <div class="card">
+                        <img src="./ek/assets/images/bg-1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">image.jpg</h5>
+                          <p class="card-text text-secondary">305 KB</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="./ek/assets/images/card-bg.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">image2.jpg</h5>
+                          <p class="card-text text-secondary">400 KB</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="activity-helper">8h ago</div>
+            </li>
+          </ul>
+          </div> 
+        </div>
+        
+        <div class="search-results">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="search-results-header">
+                          <h5>Search Results</h5>
+                          <a href="#" id="closeSearch"><i class="material-icons">close</i></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <ul class="search-result-list user-search">
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>John Doe<br>(Works at <span class="search-input-value">hj</span>)</p>
+                          </li>
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>Anna doe<br>(Lives in <span class="search-input-value">hj</span>)</p>
+                          </li>
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>People near:<br><span class="search-input-value">hj</span></p>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <ul class="search-result-list social-search">
+                          <li>
+                              <div class="social-search-icon facebook-icon-bg">
+                                  <i class="fab fa-facebook-f"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Facebook</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="social-search-icon twitter-icon-bg">
+                                  <i class="fab fa-twitter"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Twitter</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="social-search-icon google-icon-bg">
+                                  <i class="fab fa-google"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Google</p>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <ul class="search-result-list article-search">
+                          <li>
+                              <p>Lorem ipsum dolor sit amet, consectetur <span class="search-input-value">hj</span> adipiscing elit, sunt in culpa quifdaasd quis.</p>
+                              <span class="search-article-date">06 Jul, 2021</span>
+                          </li>
+                          <li>
+                              <p>Duis non semper sapien. Morbi imperdiet velit in <span class="search-input-value">hj</span> bibendum lobortis. Integer arcu urna, elementum in pellentesque nec, finibus at nisi.</p>
+                              <span class="search-article-date">19 Mar, 2017</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+        <!-- Javascripts -->
+        <script src="./ek/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="./ek/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="./ek/assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="./ek/assets/plugins/pace/pace.min.js"></script>
+        <script src="./ek/assets/js/main.min.js"></script>
+    </body>
+</html>

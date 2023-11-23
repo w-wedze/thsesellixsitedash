@@ -1,0 +1,405 @@
+<% let sw=bot.guilds.cache.get("1142569073469820991") %>
+<%- include('./panel4.ejs', {bot, user}) %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Responsive Admin Dashboard Template">
+        <meta name="keywords" content="admin,dashboard">
+        <meta name="author" content="stacks">
+        
+        <title>Thesellixsite ~ <%= sw.name %></title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1070780485673951294/1070782317905330228/tststststststtts.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="./ek/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="./ek/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+
+        <link href="./ek/assets/css/main.min.css" rel="stylesheet">
+        <link href="./ek/assets/css/custom.css" rel="stylesheet">
+
+    </head>
+    <body class="">
+      
+
+        <div class="page-container">
+          <div class="page-sidebar">
+            <a class="logo" href="index">thesellix.site</a>
+            <ul class="list-unstyled accordion-menu">
+              <li class="active-page">
+                <a href="#" class="active"><i data-feather="activity"></i>Panel<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="index" class="active"><i class="far fa-circle"></i>Ana Sayfa</a></li>
+                  <li><a href="guild" class="active"><i class="far fa-circle"></i>Sunucu Yönetimi</a></li>
+                  <li><a href="userlist" class="active"><i class="far fa-circle"></i>Üye Yönetimi</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="aperture"></i>Rol Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="roles-manage"><i class="far fa-circle"></i>Register Rolleri</a></li>
+                  <li><a href="moderation-manage"><i class="far fa-circle"></i>Yetkili Rolleri</a></li>
+                  <li><a href="moderation-manage2"><i class="far fa-circle"></i>Ceza Rolleri</a></li>
+                  <li><a href="moderation-manage3"><i class="far fa-circle"></i>Karışık Roller</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="inbox"></i>Kanal Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="channel-manage"><i class="far fa-circle"></i>Kanal Yönetimi</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="code"></i>Ceza Yönetimi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="underworld"><i class="far fa-circle"></i>Jail Cezaları</a></li>
+                  <li><a href="mutedlist"><i class="far fa-circle"></i>Mute Cezaları</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="star"></i>Stat & Welcome<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="stat"><i class="far fa-circle"></i>Stat Kategorileri</a></li>
+                  <li><a href="welcome"><i class="far fa-circle"></i>Welcome Ayarı</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><i data-feather="grid"></i>API<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                <ul class="">
+                  <li><a href="checkout"><i class="far fa-circle"></i>Ödeme Planları</a></li>
+                  <li><a href="api"><i class="far fa-circle"></i>Api Kullanımı</a></li>
+                </ul>
+              </li>
+            </ul>
+            <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+        </div>
+            <div class="page-content">
+              <div class="page-header">
+                <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                  <div class="header-title flex-fill">
+                    <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                    <h5>thesellix.site</h5>
+                  </div>
+                    <div class="header-search">
+                      <form>
+                        <input class="form-control" type="text" placeholder="<%= sw.name %>" aria-label="Search" disabled>
+                        <a href="#" class="close-search"><i data-feather="x"></i></a>
+                      </form>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item d-md-block d-lg-none">
+                          <a class="nav-link" href="#" id="toggle-search"><i data-feather="search"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link activity-trigger" href="#" id="activity-sidebar-toggle"><i data-feather="grid"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link notifications-dropdown" href="#" id="notificationsDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">3<div class="spinner-grow text-danger" role="status"></div></a>
+                          <div class="dropdown-menu dropdown-menu-end notif-drop-menu" aria-labelledby="notificationsDropDown">
+                            <h6 class="dropdown-header">Notifications</h6>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-info text-white">
+                                    <i class="fas fa-bullhorn"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p class="bold-notif-text">faucibus dolor in commodo lectus mattis</p>
+                                  <small>19:00</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-primary text-white">
+                                    <i class="fas fa-bolt"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p class="bold-notif-text">faucibus dolor in commodo lectus mattis</p>
+                                  <small>18:00</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge bg-success text-white">
+                                    <i class="fas fa-at"></i>
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge">
+                                    <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                            <a href="#">
+                              <div class="header-notif">
+                                <div class="notif-image">
+                                  <span class="notification-badge">
+                                    <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                                  </span>
+                                </div>
+                                <div class="notif-text">
+                                  <p>faucibus dolor in commodo lectus mattis</p>
+                                  <small>yesterday</small>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="<%= 'https://cdn.discordapp.com/avatars/' + user.id + '/' + user.avatar +'.png' %>" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                            <a class="dropdown-item" href="profile"><i data-feather="user"></i>Profil</a>
+                            <a class="dropdown-item" href="/"><i data-feather="log-out"></i>Çıkış Yap</a>
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+                </nav>
+            </div>
+                <div class="main-wrapper">
+                <div class="row">
+                    <div class="col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                              <form action="rolkaydet" method="POST">
+                               <center> <h5 class="card-title">Sunucu Rol Ayarları</h5> </center>
+                              <center>  <p style="color: rgb(255, 115, 0)">Hızlı güncellemelerde anlık olarak sayfa yenilemelisiniz aksi takdirde fazla istekten yaptığınız işlemler geçersiz olacaktır.</p> </center><br>
+                              <center> <p>En Alt Yetkili Rolü</p><select id="enaltyetkili" name="enaltrol" class="js-states form-control" tabindex="-1" style="display: none; width: 50%" multiple="multiple;">
+                                <% sw.roles.cache.filter(a=> !a.managed).filter(a => a.name !== "@everyone").sort().reverse().map(id => { %>
+                                <option value="<%=id.id%>">
+                                  <%=id.name%>
+                                </option>
+                                <% }) %>
+                                    
+                                </select> </center><br>
+
+                                <center> <p>Yetkili Rol(ler)i</p><select id="tümyetkilirolleri" name="yetkilirolleriymiş" class="js-states form-control" tabindex="-1" style="display: none; width: 50%" multiple="multiple;">
+                                  <% sw.roles.cache.filter(a=> !a.managed).filter(a => a.name !== "@everyone").sort().reverse().map(id => { %>
+                                  <option value="<%=id.id%>">
+                                    <%=id.name%>
+                                  </option>
+                                  <% }) %>
+                                      
+                                  </select> </center><br>
+
+                                <center> <p>Yasaklı Tag Rolü</p> <select id="ytag" name="yasaklıtagrol" class="js-states form-control" tabindex="-1" style="display: none; width: 50%" multiple="multiple;">
+                                    <% sw.roles.cache.filter(a=> !a.managed).filter(a => a.name !== "@everyone").sort().reverse().map(id => { %>
+                                  <option value="<%=id.id%>">
+                                    <%=id.name%>
+                                  </option>
+                                  <% }) %>
+                                      
+                                  </select> </center><br>
+
+                                  <center> <p>Yönetici Rol(ler)i</p> <select id="yöneticirol" name="ytrol" class="js-states form-control" tabindex="-1" style="display: none; width: 50%" multiple="multiple;">
+                                    <% sw.roles.cache.filter(a=> !a.managed).filter(a => a.name !== "@everyone").sort().reverse().map(id => { %>
+                                    <option value="<%=id.id%>">
+                                      <%=id.name%>
+                                    </option>
+                                    <% }) %>
+                                        
+                                    </select> </center><br>
+
+                                    <center> <p>Şüpheli Hesap Rolü</p> <select id="yenihesap" name="yenihesaprol" class="js-states form-control" tabindex="-1" style="display: none; width: 50%" multiple="multiple;">
+                                      <% sw.roles.cache.filter(a=> !a.managed).filter(a => a.name !== "@everyone").sort().reverse().map(id => { %>
+                                      <option value="<%=id.id%>">
+                                        <%=id.name%>
+                                      </option>
+                                      <% }) %>
+                                          
+                                      </select> </center><br>
+
+                                        <center><td><button type="submit" id="button" class="btn btn-success">Güncelle</button></td></center>
+                                      </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+                <div class="page-footer">
+                  <a href="tree-view.html" class="page-footer-item page-footer-item-left"><i data-feather="arrow-left" class="footer-left"></i>Tree View</a>
+                  <a href="invoice.html" class="page-footer-item page-footer-item-right">Invoice<i data-feather="arrow-right" class="footer-right"></i></a>
+                </div>
+                                  
+                </div>
+              
+            </div>
+
+            <div class="activity-sidebar-overlay"></div>
+        <div class="activity-sidebar">
+          <a href="#" id="activity-sidebar-close"><i class="material-icons">close</i></a>
+          <div class="activity-header">
+            <h5>Activity Logs</h5>
+          </div>
+          <div class="activity-body">
+            <ul class="activity-list list-unstyled">
+              <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Site Özelleştirme</h5>
+                            <label for="exampleColorInput" class="form-label">Aşağıdan temanın hangi renk olmasını istiyorsan seçim yapabilirsin.</label>
+<center><input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"> </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <li class="activity-item">
+                  <div class="activity-icon"><i class="material-icons">add</i></div>
+                  <div class="activity-text">Ann Green uploaded new item
+                      <span>This item has to be reviewed, moderators will check it soon.</span>
+                  </div>
+                  <div class="activity-helper">45min ago</div>
+              </li>
+              <li class="activity-item activity-info">
+                  <div class="activity-icon"><i class="material-icons">code</i></div>
+                  <div class="activity-text">John Doe made changes to create-invoice.js
+                      <span>57 lines of code added, 0 removals, 0 errors, 6 warnings</span>
+                  </div>
+                  <div class="activity-helper">3h ago</div>
+              </li>
+              <li class="activity-item activity-danger">
+                  <div class="activity-icon"><i class="material-icons">error_outline</i></div>
+                  <div class="activity-text">Can't retrieve data from server
+                      <span>Server is not responding, please contact provider</span>
+                  </div>
+                  <div class="activity-helper">6h ago</div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon"><i class="material-icons">done</i></div>
+                <div class="activity-text">Files Uploaded
+                    <span>2 new files uploaded</span>
+                    <div class="mail-attachment-files">
+                      <div class="card">
+                        <img src="./ek/assets/images/bg-1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">image.jpg</h5>
+                          <p class="card-text text-secondary">305 KB</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <img src="./ek/assets/images/card-bg.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">image2.jpg</h5>
+                          <p class="card-text text-secondary">400 KB</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="activity-helper">8h ago</div>
+            </li>
+          </ul>
+          </div> 
+        </div>
+        
+        <div class="search-results">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="search-results-header">
+                          <h5>Search Results</h5>
+                          <a href="#" id="closeSearch"><i class="material-icons">close</i></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <ul class="search-result-list user-search">
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>John Doe<br>(Works at <span class="search-input-value">hj</span>)</p>
+                          </li>
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>Anna doe<br>(Lives in <span class="search-input-value">hj</span>)</p>
+                          </li>
+                          <li>
+                              <img src="./ek/assets/images/avatars/profile-image.png" alt="">
+                              <p>People near:<br><span class="search-input-value">hj</span></p>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <ul class="search-result-list social-search">
+                          <li>
+                              <div class="social-search-icon facebook-icon-bg">
+                                  <i class="fab fa-facebook-f"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Facebook</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="social-search-icon twitter-icon-bg">
+                                  <i class="fab fa-twitter"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Twitter</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="social-search-icon google-icon-bg">
+                                  <i class="fab fa-google"></i>
+                              </div>
+                              <div class="social-search-text">
+                                  <p><span class="search-input-value">hj</span> on Google</p>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4">
+                      <ul class="search-result-list article-search">
+                          <li>
+                              <p>Lorem ipsum dolor sit amet, consectetur <span class="search-input-value">hj</span> adipiscing elit, sunt in culpa quifdaasd quis.</p>
+                              <span class="search-article-date">06 Jul, 2021</span>
+                          </li>
+                          <li>
+                              <p>Duis non semper sapien. Morbi imperdiet velit in <span class="search-input-value">hj</span> bibendum lobortis. Integer arcu urna, elementum in pellentesque nec, finibus at nisi.</p>
+                              <span class="search-article-date">19 Mar, 2017</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+        <!-- Javascripts -->
+        <script src="./ek/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="./ek/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="./ek/assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="./ek/assets/plugins/pace/pace.min.js"></script>
+        <script src="./ek/assets/plugins/select2/js/select2.full.min.js"></script>
+        <script src="./ek/assets/js/main.min.js"></script>
+        <script src="./ek/assets/js/pages/select2.js"></script>
+    </body>
+</html>
